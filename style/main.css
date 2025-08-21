@@ -38,11 +38,4 @@ button {
 #map {
   height: 100vh;
   width: 100%;
-}
-
-canvas__overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  pointer-events: none;
 }/*# sourceMappingURL=main.css.map */
