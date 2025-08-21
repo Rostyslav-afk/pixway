@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Pixway</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="./style/main.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div id="map"></div>
+    </header>
+    <main class="main">
+        <section class="canvas">
+            <canvas id="canvas__overlay"></canvas>
+        </section>
+    </main>
+    <footer class="footer">
+
+    </footer>
+
+
+    <script>
+        const map = L.map("map", {
+            minZoom: 3,
+            maxZoom: 18,
+            maxBounds: [
+                [34.5, -25.0], // SW
+                [72.0, 45.0]   // NE
+            ]
+        }).setView([54, 15], 4);
+
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: "&copy; OpenStreetMap contributors"
+        }).addTo(map);
+
+        const canvas = document.getElementById("canvas__overlay");
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Малювання пікселів по кліку
+        map.on("click", (e) => {
+            const point = map.latLngToContainerPoint(e.latlng);
+            ctx.fillStyle = "red";
+            ctx.fillRect(point.x, point.y, 6, 6);
+        });
+
+        // Перемальовуємо canvas при зміні масштабу чи руху 
+        map.on("move resize zoom", () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            // тут треба з бекенду брати список пікселів і перемальовувати їх
+        });
+    </script>
+</body>
+
+</html>
