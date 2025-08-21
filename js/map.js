@@ -1,12 +1,51 @@
-const map = L.map("map", {
-    minZoom: 3,
-    maxZoom: 18,
-    maxBounds: [
-        [34.5, -25.0], // SW
-        [72.0, 45.0]   // NE
-    ]
-}).setView([54, 15], 4);
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
 
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution: "&copy; OpenStreetMap contributors"
-}).addTo(map);
+// Піксель налаштування
+const pixelSize = 25;
+const currentColor = '#ff0000';
+
+// Час
+const cooldown = 1;
+let timeLeft = 120;
+const maxTime = 120;
+
+// Фон
+ctx.fillStyle = '#a0d0ff';
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+const pixels = [];
+
+// Система малювання
+canvas.addEventListener('click', (evt) => {
+    // Перевірка чи є ще секунди
+    if (timeLeft >= cooldown) {
+        timeLeft -= cooldown
+        const rect = canvas.getBoundingClientRect();
+        const x = Math.floor((evt.clientX - rect.left) / pixelSize);
+        const y = Math.floor((evt.clientY - rect.top) / pixelSize);
+
+        pixels.push({ x, y, color: currentColor });
+
+        ctx.fillStyle = currentColor;
+        ctx.fillRect(x * pixelSize, y * pixelSize, pixelSize, pixelSize);
+
+        //Якщо ні то виводити У вас немає часу! і все
+    } else if (timeLeft < cooldown) {
+        alert("У вас немає часу!")
+        return;
+    }
+});
+
+//Регенерація часу
+
+setInterval(() => {
+    if (timeLeft < maxTime) {
+        timeLeft += 1;
+        if (timeLeft > maxTime) timeLeft = maxTime;
+    }
+}, 1000);
+
+setInterval(() => {
+    console.log(`Часу лишилося: ${timeLeft}`);
+}, 300)
