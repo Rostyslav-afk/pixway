@@ -1,3 +1,4 @@
+// Cooldown текст
 const cooldownText = document.querySelector(".cooldown__title");
 
 const canvas = document.querySelector('#canvas');
