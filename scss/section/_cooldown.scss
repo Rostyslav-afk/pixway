@@ -1,0 +1,20 @@
+.cooldown {
+    position: fixed;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &__bg {
+        padding: 10px;
+        // background: #E4E4E7;
+        background: rgba($color: $gray-colour, $alpha: 0.8);
+        border: 1px dashed $black-colour;
+        border-radius: 3px;
+    }
+
+    &__title {
+        color: #000;
+        font-family: $nata-sans;
+        font-weight: 400;
+    }
+}

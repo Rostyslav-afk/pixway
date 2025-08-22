@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <title>Pixway</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nata+Sans:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style/main.min.css">
 </head>
 
@@ -15,7 +16,9 @@
     </header>
     <main class="main">
         <section class="cooldown">
-
+            <div class="cooldown__bg">
+                <h1 class="cooldown__title">120 sec.</h1>
+            </div>
         </section>
         <section class="showm">
 
@@ -36,7 +39,7 @@
         </section>
     </footer>
     <div class="modals"></div>
-    <script type="module" src="./js/map.js"></script>
+    <script type="module" src="./js/app.js"></script>
 </body>
 
 </html>

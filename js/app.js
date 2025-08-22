@@ -1,8 +1,10 @@
-const canvas = document.getElementById('canvas');
+const cooldownText = document.querySelector(".cooldown__title");
+
+const canvas = document.querySelector('#canvas');
 const ctx = canvas.getContext('2d');
 
 // Піксель налаштування
-const pixelSize = 25;
+const pixelSize = 25; // Тут розмір пікселів
 const currentColor = '#ff0000';
 
 // Час
@@ -47,5 +49,5 @@ setInterval(() => {
 }, 1000);
 
 setInterval(() => {
-    console.log(`Часу лишилося: ${timeLeft}`);
+    cooldownText.textContent = `${timeLeft} sec.`
 }, 300)
