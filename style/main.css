@@ -42,20 +42,37 @@ button {
 
 .cooldown {
   position: fixed;
-  top: 5px;
+  top: 15px;
   left: 50%;
   transform: translateX(-50%);
+}
+@media screen and (min-width: 1264px) {
+  .cooldown {
+    top: 5px;
+  }
 }
 .cooldown__bg {
   padding: 10px;
   background: rgba(228, 228, 231, 0.8);
-  border: 1px dashed #000;
+  border: 2px dashed #000;
   border-radius: 3px;
 }
+@media screen and (min-width: 1264px) {
+  .cooldown__bg {
+    padding: 10px;
+    border: 1px dashed #000;
+  }
+}
 .cooldown__title {
+  font-size: 50px;
   color: #000;
   font-family: "Nata Sans";
   font-weight: 400;
+}
+@media screen and (min-width: 1264px) {
+  .cooldown__title {
+    font-size: 26px;
+  }
 }
 
 .pallete {
@@ -64,7 +81,7 @@ button {
   right: 15px;
 }
 .pallete__box {
-  padding: 10px;
+  padding: 5px;
   background-color: rgba(228, 228, 231, 0.8);
   border: 2px solid #000;
   border-radius: 5px;

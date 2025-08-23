@@ -1,20 +1,40 @@
 .cooldown {
     position: fixed;
-    top: 5px;
+    top: 15px;
     left: 50%;
     transform: translateX(-50%);
 
+    @media screen and (min-width: 752px) {}
+
+    @media screen and (min-width: 1264px) {
+        top: 5px;
+    }
+
     &__bg {
         padding: 10px;
-        // background: #E4E4E7;
         background: rgba($color: $gray-colour, $alpha: 0.8);
-        border: 1px dashed $black-colour;
+        border: 2px dashed $black-colour;
         border-radius: 3px;
+
+        @media screen and (min-width: 752px) {}
+
+        @media screen and (min-width: 1264px) {
+            padding: 10px;
+            border: 1px dashed $black-colour;
+        }
     }
 
     &__title {
+        font-size: 50px;
         color: #000;
         font-family: $nata-sans;
         font-weight: 400;
+
+        @media screen and (min-width: 752px) {}
+
+        @media screen and (min-width: 1264px) {
+            font-size: 26px;
+        }
+
     }
 }

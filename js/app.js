@@ -33,7 +33,7 @@ canvas.addEventListener('click', (evt) => {
         ctx.fillStyle = currentColor;
         ctx.fillRect(x * pixelSize, y * pixelSize, pixelSize, pixelSize);
 
-        //Якщо ні то виводити У вас немає часу! і все
+        //Якщо ні то виводити У вас немає часу і всьо
     } else if (timeLeft < cooldown) {
         alert("У вас немає часу!")
         return;
@@ -49,6 +49,7 @@ setInterval(() => {
     }
 }, 1000);
 
+// Вивід часу на cooldownText
 setInterval(() => {
     cooldownText.textContent = `${timeLeft} sec.`
 }, 300)
