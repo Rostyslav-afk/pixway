@@ -668,8 +668,9 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 
 },{}],"2R06K":[function(require,module,exports,__globalThis) {
 var _game = require("./js/game");
+var _pallete = require("./js/pallete");
 
-},{"./js/game":"gnxQg"}],"gnxQg":[function(require,module,exports,__globalThis) {
+},{"./js/game":"gnxQg","./js/pallete":"lICVS"}],"gnxQg":[function(require,module,exports,__globalThis) {
 // Cooldown текст
 const cooldownText = document.querySelector(".cooldown__title");
 const canvas = document.querySelector('#canvas');
@@ -717,6 +718,20 @@ setInterval(()=>{
 setInterval(()=>{
     cooldownText.textContent = `${timeLeft} sec.`;
 }, 300);
+
+},{}],"lICVS":[function(require,module,exports,__globalThis) {
+const pallete = document.querySelector(".pallete__box");
+const palleteButton = document.querySelector(".pallete__button-open");
+let isClosed = false;
+palleteButton.addEventListener("click", ()=>{
+    if (isClosed === false) {
+        pallete.style.opacity = "0";
+        isClosed = true;
+    } else if (isClosed === true) {
+        pallete.style.opacity = "1";
+        isClosed = false;
+    }
+});
 
 },{}]},["7wZbQ","2R06K"], "2R06K", "parcelRequire54ba", {})
 

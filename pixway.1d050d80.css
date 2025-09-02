@@ -81,6 +81,7 @@ button {
 }
 
 .pallete__box {
+  opacity: 1;
   background-color: #e4e4e7cc;
   border: 2px solid #000;
   border-radius: 5px;
