@@ -109,7 +109,7 @@ button {
 .pallete .color-btn.selected {
   border-color: #000;
 }
-.pallete .wrapper {
+.pallete__wrapper {
   display: flex;
   justify-content: right;
   align-items: center;
