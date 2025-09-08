@@ -68,9 +68,58 @@ button {
   font-weight: 400;
 }
 
+@media screen and (width >= 752px) {
+  .cooldown__title {
+    font-size: 26px;
+  }
+}
+
 @media screen and (width >= 1264px) {
   .cooldown__title {
     font-size: 26px;
+  }
+}
+
+.cords {
+  position: fixed;
+  bottom: 25px;
+  left: 15px;
+}
+
+@media screen and (width >= 1264px) {
+  .cords {
+    bottom: 10px;
+    left: 10px;
+  }
+}
+
+.cords__div {
+  background-color: #e4e4e7cc;
+  border: 2px dashed #000;
+  border-radius: 3px;
+  padding: 15px;
+}
+
+@media screen and (width >= 752px) {
+  .cords__div {
+    padding: 10px 20px;
+  }
+}
+
+@media screen and (width >= 1264px) {
+  .cords__div {
+    padding: 10px 20px;
+  }
+}
+
+.cords__text {
+  font-family: Nata Sans;
+  font-size: 40px;
+}
+
+@media screen and (width >= 752px) {
+  .cords__text {
+    font-size: 20px;
   }
 }
 
@@ -114,7 +163,7 @@ button {
   border-color: #000;
 }
 
-.pallete .wrapper {
+.pallete__wrapper {
   justify-content: right;
   align-items: center;
   display: flex;
