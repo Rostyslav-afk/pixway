@@ -30,7 +30,9 @@
         font-family: $nata-sans;
         font-weight: 400;
 
-        @media screen and (min-width: 752px) {}
+        @media screen and (min-width: 752px) {
+            font-size: 26px;
+        }
 
         @media screen and (min-width: 1264px) {
             font-size: 26px;

@@ -4,9 +4,9 @@
   "description": "",
   "scripts": {
     "dev": "npx parcel src/index.html",
-    "build": "parcel build src/index.html --public-url /pixway/ --dist-dir dist",
+    "build": "parcel build src/index.html --public-url /pixway/",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d ./dist"
   },
   "keywords": [],
   "author": "",
