@@ -1,7 +1,28 @@
+// імпорти
+import { alert, defaultModules, info, success, error } from '../../node_modules/@pnotify/core/dist/PNotify.js';
+import * as PNotifyMobile from '../../node_modules/@pnotify/mobile/dist/PNotifyMobile.js';
+import '@pnotify/core/dist/BrightTheme.css';
+defaultModules.set(PNotifyMobile, {});
+
+defaultModules.set(PNotifyMobile, {});
+
+
+// pnotify
+
+function errorPnotify() {
+    return error({
+        title: "Oh no!",
+        text: "You are out of time."
+    });
+}
+
+
 // Cooldown текст
 const cooldownText = document.querySelector(".cooldown__title");
 
 const canvas = document.querySelector('#canvas');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 const ctx = canvas.getContext('2d');
 
 // Піксель налаштування
@@ -35,7 +56,7 @@ canvas.addEventListener('click', (evt) => {
 
         //Якщо ні то виводити У вас немає часу і всьо
     } else if (timeLeft < cooldown) {
-        alert("У вас немає часу!")
+        errorPnotify();
         return;
     }
 });

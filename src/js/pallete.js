@@ -7,10 +7,8 @@ palleteButton.addEventListener("click", () => {
     if (isClosed === false) {
         pallete.style.opacity = "0";
         isClosed = true;
-        console.log("close");
     } else if (isClosed === true) {
         pallete.style.opacity = "1";
         isClosed = false;
-        console.log("open");
     }
 });

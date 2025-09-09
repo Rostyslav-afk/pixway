@@ -1,6 +1,6 @@
 .cords {
     position: fixed;
-    bottom: 25px;
+    bottom: 15px;
     left: 15px;
 
     @media screen and (min-width: 1264px) {
@@ -13,7 +13,7 @@
         background-color: #e4e4e7cc;
         border: 2px dashed #000;
         border-radius: 3px;
-        padding: 15px;
+        padding: 10px;
 
         @media screen and (min-width: 752px) {
             padding-top: 10px;
@@ -32,7 +32,8 @@
 
     &__text {
         font-family: "Nata Sans";
-        font-size: 40px;
+        font-size: 18px;
+        cursor: pointer;
 
         @media screen and (min-width: 752px) {
             font-size: 20px;

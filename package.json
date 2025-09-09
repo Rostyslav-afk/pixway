@@ -6,7 +6,7 @@
     "dev": "npx parcel src/index.html",
     "build": "parcel build src/index.html --public-url /pixway/",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d ./dist"
+    "deploy": "gh-pages -d \"dist\""
   },
   "keywords": [],
   "author": "",
@@ -14,5 +14,8 @@
   "devDependencies": {
     "gh-pages": "^6.3.0",
     "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "pnotify": "^5.2.0"
   }
 }
