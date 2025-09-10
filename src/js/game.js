@@ -35,7 +35,19 @@ const ctx = canvas.getContext('2d');
 
 // Піксель налаштування
 const pixelSize = 25; // Тут розмір пікселів
-const currentColor = '#ff0000';
+let currentColor = '#ff0000'; //тут колір пікселів
+
+// змінювання кольорів
+const colorBtns = document.querySelectorAll(".color-btn");
+
+colorBtns.forEach(btn => {
+    btn.addEventListener("click", (event) => {
+        currentColor = event.target.dataset.color; // беремо data-color
+        console.log("Обраний колір:", currentColor);
+    });
+});
+
+
 
 // Час
 const cooldown = 1;
