@@ -12,10 +12,18 @@ defaultModules.set(PNotifyMobile, {});
 function errorPnotify() {
     return error({
         title: "Oh no!",
-        text: "You are out of time."
+        text: "You are out of time.",
+        delay: 1000
     });
 }
 
+function banPnotify() {
+    return info({
+        title: 'You are banned',
+        text: 'If you were banned by mistake, write to us on the discord server.',
+        hide: false
+    });
+}
 
 // Cooldown текст
 const cooldownText = document.querySelector(".cooldown__title");

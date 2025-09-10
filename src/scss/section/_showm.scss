@@ -1,0 +1,31 @@
+.showm {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+
+    @media screen and (min-width: 1264px) {
+        top: 5px;
+        left: 10px;
+    }
+
+    &__box {
+        width: 42px;
+        height: 42px;
+        border: 1px dashed #000;
+        border-radius: 3px;
+        background: #e4e4e7cc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media screen and (min-width: 752px) {
+            width: 48px;
+            height: 48px;
+        }
+    }
+
+    &__button {
+        background: transparent;
+        font-size: 16px;
+    }
+}
