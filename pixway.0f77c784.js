@@ -673,7 +673,7 @@ var _showm = require("./js/showm");
 var _cords = require("./js/cords");
 var _pallete = require("./js/pallete");
 
-},{"./js/game":"gnxQg","./js/cords":"enIhu","./js/pallete":"lICVS","./js/adminpanel":"jlvl2","./js/showm":"7cJ5z"}],"gnxQg":[function(require,module,exports,__globalThis) {
+},{"./js/game":"gnxQg","./js/adminpanel":"jlvl2","./js/showm":"7cJ5z","./js/cords":"enIhu","./js/pallete":"lICVS"}],"gnxQg":[function(require,module,exports,__globalThis) {
 // імпорти
 var _pnotifyJs = require("../../node_modules/@pnotify/core/dist/PNotify.js");
 var _pnotifyMobileJs = require("../../node_modules/@pnotify/mobile/dist/PNotifyMobile.js");
@@ -703,7 +703,15 @@ canvas.height = window.innerHeight;
 const ctx = canvas.getContext('2d');
 // Піксель налаштування
 const pixelSize = 25; // Тут розмір пікселів
-const currentColor = '#ff0000';
+let currentColor = '#ff0000'; //тут колір пікселів
+// змінювання кольорів
+const colorBtns = document.querySelectorAll(".color-btn");
+colorBtns.forEach((btn)=>{
+    btn.addEventListener("click", (event)=>{
+        currentColor = event.target.dataset.color; // беремо data-color
+        console.log("\u041E\u0431\u0440\u0430\u043D\u0438\u0439 \u043A\u043E\u043B\u0456\u0440:", currentColor);
+    });
+});
 // Час
 const cooldown = 1;
 let timeLeft = 120;
@@ -3704,7 +3712,22 @@ var global = arguments[3];
     });
 });
 
-},{}],"grIyt":[function() {},{}],"enIhu":[function(require,module,exports,__globalThis) {
+},{}],"grIyt":[function() {},{}],"jlvl2":[function(require,module,exports,__globalThis) {
+
+},{}],"7cJ5z":[function(require,module,exports,__globalThis) {
+const showmButton = document.querySelector(".showm__button");
+let isMenuOpened = false;
+showmButton.addEventListener("click", (event)=>{
+    if (isMenuOpened === false) {
+        isMenuOpened = true;
+        event.target.textContent = "\u2B06";
+    } else if (isMenuOpened === true) {
+        isMenuOpened = false;
+        event.target.textContent = "\u2B07";
+    }
+});
+
+},{}],"enIhu":[function(require,module,exports,__globalThis) {
 const cordsText = document.querySelector(".cords__text");
 cordsText.addEventListener("click", (event)=>{
     const text = event.target.textContent;
@@ -3722,21 +3745,6 @@ palleteButton.addEventListener("click", ()=>{
     } else if (isClosed === true) {
         pallete.style.opacity = "1";
         isClosed = false;
-    }
-});
-
-},{}],"jlvl2":[function(require,module,exports,__globalThis) {
-
-},{}],"7cJ5z":[function(require,module,exports,__globalThis) {
-const showmButton = document.querySelector(".showm__button");
-let isMenuOpened = false;
-showmButton.addEventListener("click", (event)=>{
-    if (isMenuOpened === false) {
-        isMenuOpened = true;
-        event.target.textContent = "\u2B06";
-    } else if (isMenuOpened === true) {
-        isMenuOpened = false;
-        event.target.textContent = "\u2B07";
     }
 });
 
