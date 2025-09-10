@@ -668,10 +668,12 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 
 },{}],"2R06K":[function(require,module,exports,__globalThis) {
 var _game = require("./js/game");
+var _adminpanel = require("./js/adminpanel");
+var _showm = require("./js/showm");
 var _cords = require("./js/cords");
 var _pallete = require("./js/pallete");
 
-},{"./js/game":"gnxQg","./js/pallete":"lICVS","./js/cords":"enIhu"}],"gnxQg":[function(require,module,exports,__globalThis) {
+},{"./js/game":"gnxQg","./js/cords":"enIhu","./js/pallete":"lICVS","./js/adminpanel":"jlvl2","./js/showm":"7cJ5z"}],"gnxQg":[function(require,module,exports,__globalThis) {
 // імпорти
 var _pnotifyJs = require("../../node_modules/@pnotify/core/dist/PNotify.js");
 var _pnotifyMobileJs = require("../../node_modules/@pnotify/mobile/dist/PNotifyMobile.js");
@@ -682,7 +684,15 @@ var _brightThemeCss = require("@pnotify/core/dist/BrightTheme.css");
 function errorPnotify() {
     return (0, _pnotifyJs.error)({
         title: "Oh no!",
-        text: "You are out of time."
+        text: "You are out of time.",
+        delay: 1000
+    });
+}
+function banPnotify() {
+    return (0, _pnotifyJs.info)({
+        title: 'You are banned',
+        text: 'If you were banned by mistake, write to us on the discord server.',
+        hide: false
     });
 }
 // Cooldown текст
@@ -3694,7 +3704,14 @@ var global = arguments[3];
     });
 });
 
-},{}],"grIyt":[function() {},{}],"lICVS":[function(require,module,exports,__globalThis) {
+},{}],"grIyt":[function() {},{}],"enIhu":[function(require,module,exports,__globalThis) {
+const cordsText = document.querySelector(".cords__text");
+cordsText.addEventListener("click", (event)=>{
+    const text = event.target.textContent;
+    navigator.clipboard.writeText(text).then(()=>{});
+});
+
+},{}],"lICVS":[function(require,module,exports,__globalThis) {
 const pallete = document.querySelector(".pallete__box");
 const palleteButton = document.querySelector(".pallete__button-open");
 let isClosed = false;
@@ -3702,19 +3719,25 @@ palleteButton.addEventListener("click", ()=>{
     if (isClosed === false) {
         pallete.style.opacity = "0";
         isClosed = true;
-        console.log("close");
     } else if (isClosed === true) {
         pallete.style.opacity = "1";
         isClosed = false;
-        console.log("open");
     }
 });
 
-},{}],"enIhu":[function(require,module,exports,__globalThis) {
-const cordsText = document.querySelector(".cords__text");
-cordsText.addEventListener("click", (event)=>{
-    const text = event.target.textContent;
-    navigator.clipboard.writeText(text).then(()=>{});
+},{}],"jlvl2":[function(require,module,exports,__globalThis) {
+
+},{}],"7cJ5z":[function(require,module,exports,__globalThis) {
+const showmButton = document.querySelector(".showm__button");
+let isMenuOpened = false;
+showmButton.addEventListener("click", (event)=>{
+    if (isMenuOpened === false) {
+        isMenuOpened = true;
+        event.target.textContent = "\u2B06";
+    } else if (isMenuOpened === true) {
+        isMenuOpened = false;
+        event.target.textContent = "\u2B07";
+    }
 });
 
 },{}]},["7wZbQ","2R06K"], "2R06K", "parcelRequire54ba", {})

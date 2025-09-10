@@ -90,6 +90,42 @@ html, body {
   }
 }
 
+.showm {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+}
+
+@media screen and (width >= 1264px) {
+  .showm {
+    top: 5px;
+    left: 10px;
+  }
+}
+
+.showm__box {
+  background: #e4e4e7cc;
+  border: 1px dashed #000;
+  border-radius: 3px;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  display: flex;
+}
+
+@media screen and (width >= 752px) {
+  .showm__box {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.showm__button {
+  background: none;
+  font-size: 16px;
+}
+
 .cords {
   position: fixed;
   bottom: 15px;
