@@ -9,7 +9,7 @@
     <link href="../node_modules/@pnotify/mobile/dist/PNotifyMobile.css" rel="stylesheet" type="text/css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nata+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nata+Sans:wght@100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style/main.min.css">
 </head>
 
@@ -35,6 +35,30 @@
                         <use href="./img/symbol-defs.svg#icon-cog"></use>
                     </svg>
                 </button>
+            </div>
+            <div class="settings__overlay">
+                <div class="settings__modal">
+                    <h1 class="settings__modal-title">Settings</h1>
+                    <ul class="settings__modal-list">
+                        <li class="settings__modal-item">
+                            <h3 class="settings__modal-item-subtitle">Show Grid</h3>
+                            <p class="settings__modal-item-text">Turn on grid to highlight pixel borders.</p>
+                            <input type="checkbox" name="settings__modal-item-input" id="settings__modal-item-input"
+                                class="settings__modal-item-input">
+                            <label for="settings__modal-item-input" class="settings__modal-item-label"></label>
+                            <div class="setting__modal-item-line"></div>
+                        </li>
+                        <li class="settings__modal-item">
+                            <h3 class="settings__modal-item-subtitle">Show Pixel Activity</h3>
+                            <p class="settings__modal-item-text">Show circles where pixels are placed.</p>
+                            <input type="checkbox" name="settings__modal-item-input" id="settings__modal-item-input"
+                                class="settings__modal-item-input">
+                            <label for="settings__modal-item-input" class="settings__modal-item-label"></label>
+                            <div class="setting__modal-item-line"></div>
+                        </li>
+                    </ul>
+                    <button type="button" class="settings__modal-close">X</button>
+                </div>
             </div>
         </section>
         <section class="profile">
