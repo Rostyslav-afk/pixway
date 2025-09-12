@@ -1,9 +1,22 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 #canvas {
   display: block;
+}
+
+.show-menu {
+  transition: all 0.3s;
+
+  .showm__box {
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+
+  .settings {
+    opacity: 1;
+  }
 }
