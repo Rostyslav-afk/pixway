@@ -3715,15 +3715,18 @@ var global = arguments[3];
 },{}],"grIyt":[function() {},{}],"jlvl2":[function(require,module,exports,__globalThis) {
 
 },{}],"7cJ5z":[function(require,module,exports,__globalThis) {
+const body = document.querySelector("body");
 const showmButton = document.querySelector(".showm__button");
 let isMenuOpened = false;
 showmButton.addEventListener("click", (event)=>{
     if (isMenuOpened === false) {
         isMenuOpened = true;
         event.target.textContent = "\u2B06";
+        body.classList.add("show-menu");
     } else if (isMenuOpened === true) {
         isMenuOpened = false;
         event.target.textContent = "\u2B07";
+        body.classList.remove("show-menu");
     }
 });
 
